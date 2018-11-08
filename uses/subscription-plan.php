@@ -1,0 +1,13 @@
+<?php
+
+use App\Subscription\Command\CreateSubscriptionPlanCommand;
+use App\Subscription\Command\CreateSubscriptionPlanCommandHandler;
+use App\Subscription\Infrastructure\Doctrine\SubscriptionPlanDoctrineRepository;
+
+$repository = new SubscriptionPlanDoctrineRepository();
+$handler = new CreateSubscriptionPlanCommandHandler($repository);
+$response = $handler->handle(new CreateSubscriptionPlanCommand(
+    'label', 12, 20, '2019-06-30', ['gym', 'tennis']
+));
+
+$response->value();
