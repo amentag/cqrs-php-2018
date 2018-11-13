@@ -5,9 +5,10 @@ namespace App\Subscription\Command;
 use App\Common\Command;
 use App\Common\CommandHandler;
 use App\Common\CommandResponse;
-use App\Subscription\Domain\SubscriptionPlan;
-use App\Subscription\Domain\SubscriptionPlanRepository;
-use App\Subscription\Infrastructure\Doctrine\SubscriptionPlanDoctrineRepository;
+use App\Subscription\Domain\Entity\SubscriptionPlan;
+use App\Subscription\Domain\Repository\SubscriptionPlanRepository;
+use App\Subscription\Domain\ValueObject\Currency;
+use App\Subscription\Domain\ValueObject\Money;
 use DateTime;
 
 /**
@@ -38,7 +39,7 @@ class CreateSubscriptionPlanCommandHandler implements CommandHandler
     {
         $subscription = new SubscriptionPlan(
             $command->name,
-            $command->price,
+            new Money($command->price, new Currency($command->currency)),
             $command->annualDiscount,
             new DateTime($command->expirationDate),
             $command->includedActivities

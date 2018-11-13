@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Subscription\Domain;
+namespace App\Subscription\Domain\Repository;
 
 use App\Common\Repository;
+use App\Subscription\Domain\Entity\SubscriptionPlan;
 use Ramsey\Uuid\Uuid;
 
 interface SubscriptionPlanRepository extends Repository

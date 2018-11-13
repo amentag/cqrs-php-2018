@@ -2,11 +2,12 @@
 
 namespace App\Subscription\Infrastructure\Doctrine;
 
-use App\Subscription\Domain\SubscriptionPlan;
-use App\Subscription\Domain\SubscriptionPlanRepository;
+use App\Subscription\Domain\Entity\SubscriptionPlan;
+use App\Subscription\Domain\Repository\SubscriptionPlanRepository;
+use Doctrine\ORM\EntityRepository;
 use Ramsey\Uuid\Uuid;
 
-class SubscriptionPlanDoctrineRepository implements SubscriptionPlanRepository
+class SubscriptionPlanDoctrineRepository extends EntityRepository implements SubscriptionPlanRepository
 {
 
     public function get(Uuid $id): SubscriptionPlan
@@ -29,7 +30,7 @@ class SubscriptionPlanDoctrineRepository implements SubscriptionPlanRepository
         // TODO: Implement getAllPlan() method.
     }
 
-    public function findActivePlan(Uuid $id): ?SubscriptionPlan
+    public function findActivePlan(): array
     {
         // TODO: Implement findActivePlan() method.
     }

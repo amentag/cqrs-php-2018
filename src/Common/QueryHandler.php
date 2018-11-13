@@ -11,5 +11,7 @@ namespace App\Common;
 
 interface QueryHandler
 {
+    public function handle(Query $query): array;
 
+    public function listenTo(): string;
 }

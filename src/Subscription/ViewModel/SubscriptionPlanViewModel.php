@@ -2,7 +2,7 @@
 
 namespace App\Subscription\ViewModel;
 
-use App\Subscription\Domain\SubscriptionPlan;
+use App\Subscription\Domain\Entity\SubscriptionPlan;
 
 class SubscriptionPlanViewModel
 {

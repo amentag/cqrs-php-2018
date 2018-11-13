@@ -5,6 +5,14 @@
     }
   },
   "require": {
-    "ramsey/uuid": "^3.8"
+    "ramsey/uuid": "^3.8",
+    "psr/log": "^1.0",
+    "symfony/dependency-injection": "^4.1",
+    "symfony/http-foundation": "^4.1",
+    "symfony/serializer": "^4.1",
+    "symfony/annotations-pack": "^1.0",
+    "symfony/routing": "^4.1",
+    "symfony/orm-pack": "^1.0",
+    "doctrine/collections": "^1.5"
   }
 }

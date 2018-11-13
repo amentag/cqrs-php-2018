@@ -2,15 +2,17 @@
 
 namespace App\Subscription\Query;
 
+
 use App\Common\Query;
-use App\Subscription\Domain\SubscriptionPlan;
-use App\Subscription\Domain\SubscriptionPlanRepository;
+use App\Common\QueryHandler;
+use App\Subscription\Domain\Entity\SubscriptionPlan;
+use App\Subscription\Domain\Repository\SubscriptionPlanRepository;
 use App\Subscription\ViewModel\SubscriptionPlanViewModel;
 
 /**
  * Cette classe est un DTO
  */
-class FindActiveSubscriptionPlansQueryHandler implements Query
+class FindActiveSubscriptionPlansQueryHandler implements QueryHandler
 {
     /**
      * @var SubscriptionPlanRepository

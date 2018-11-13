@@ -1,0 +1,5 @@
+services:
+  App\Common\Infrastructure\CommandBus:
+    factory: App\Service\CommandBusFactory:build
+    arguments: [!tagged ddd.command_handler, @logger]
+    lazy: true
